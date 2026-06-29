@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="./assets/images/progtest_logo.png" alt="ProgTest Logo" width="120" />
-
 # ProgTest
 
 ### AI-Powered Quiz & Learning App for Software Developers
@@ -228,23 +226,23 @@ The back-end is a personally built **RESTful API**, deployed and serving the liv
 
 | Login | Register | Home |
 |:---:|:---:|:---:|
-| ![Login](./login.png) | ![Register](./github_readme_images/register.png) | ![Home](./github_readme_images/home.png) |
+| ![Login](./login.png) | ![Register](./register.png) | ![Home](./home.png) |
 
 | Tests | Question | Answered |
 |:---:|:---:|:---:|
-| ![Tests](./github_readme_images/tests.png) | ![Question](./github_readme_images/question.png) | ![Answered](./github_readme_images/answered_question.png) |
+| ![Tests](./tests.png) | ![Question](./question.png) | ![Answered](./answered_question.png) |
 
 | Results | Profile | Change Password |
 |:---:|:---:|:---:|
-| ![Results](./github_readme_images/results.png) | ![Profile](./github_readme_images/profile.png) | ![Change Password](./github_readme_images/change_password.png) |
+| ![Results](./results.png) | ![Profile](./profile.png) | ![Change Password](./change_password.png) |
 
 | Ask the AI | Ask with Document | Generate Test with AI |
 |:---:|:---:|:---:|
-| ![Ask AI](./github_readme_images/ask_to_ai.png) | ![Ask with Doc](./github_readme_images/ask_with_doc.png) | ![Create Test](./github_readme_images/create_test.png) |
+| ![Ask AI](./ask_to_ai.png) | ![Ask with Doc](./ask_with_doc.png) | ![Create Test](./create_test.png) |
 
 | Determine Work Field | Career Path | Alert Dialogs |
 |:---:|:---:|:---:|
-| ![Career 1](./github_readme_images/career_path1.png) | ![Career 2](./github_readme_images/career_path2.png) | ![Alert](./github_readme_images/alertdialog1.png) |
+| ![Career 1](./career_path1.png) | ![Career 2](./career_path2.png) | ![Alert](./alertdialog1.png) |
 
 </div>
 
