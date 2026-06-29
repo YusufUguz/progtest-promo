@@ -228,7 +228,7 @@ The back-end is a personally built **RESTful API**, deployed and serving the liv
 
 | Login | Register | Home |
 |:---:|:---:|:---:|
-| ![Login](./github_readme_images/login.png) | ![Register](./github_readme_images/register.png) | ![Home](./github_readme_images/home.png) |
+| ![Login](./login.png) | ![Register](./github_readme_images/register.png) | ![Home](./github_readme_images/home.png) |
 
 | Tests | Question | Answered |
 |:---:|:---:|:---:|
