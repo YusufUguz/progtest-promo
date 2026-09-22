@@ -296,6 +296,76 @@ These are the current Turkish Play Store visuals for the v2 product experience.
 
 </div>
 
+### Detailed feature gallery
+
+The Play Store compositions above show the current visual direction. The
+close-up captures below preserve detailed screens from the product's evolution
+and broader feature development. The active v2 feature set is documented above;
+experimental screens such as document-assisted AI may not be exposed in the
+current navigation.
+
+#### Account and navigation
+
+<div align="center">
+
+| Login | Register | Home |
+|:---:|:---:|:---:|
+| ![Login screen](./assets/screenshots/details/login.png) | ![Registration screen](./assets/screenshots/details/register.png) | ![Home screen](./assets/screenshots/details/home.png) |
+
+| Profile | Change password |
+|:---:|:---:|
+| ![Profile and statistics](./assets/screenshots/details/profile.png) | ![Change password screen](./assets/screenshots/details/change_password.png) |
+
+</div>
+
+#### Complete quiz journey
+
+<div align="center">
+
+| Test list | Unanswered question | Answered question |
+|:---:|:---:|:---:|
+| ![Available tests](./assets/screenshots/details/tests.png) | ![Question before answering](./assets/screenshots/details/question.png) | ![Question after answering](./assets/screenshots/details/answered_question.png) |
+
+| Unsolved test state | Test result |
+|:---:|:---:|
+| ![Unsolved test state](./assets/screenshots/details/unsolved_test.png) | ![Test result details](./assets/screenshots/details/results.png) |
+
+</div>
+
+#### AI assistant and document prototype
+
+<div align="center">
+
+| AI hub | Ask AI | Work with a document |
+|:---:|:---:|:---:|
+| ![AI feature hub](./assets/screenshots/details/ask_to_ai.png) | ![Ask AI screen](./assets/screenshots/details/ask_to_ai_page.png) | ![Document-assisted AI screen](./assets/screenshots/details/ask_with_doc.png) |
+
+</div>
+
+#### AI-generated test flow
+
+<div align="center">
+
+| Enter a topic | Generation progress | Generated test |
+|:---:|:---:|:---:|
+| ![Enter a test topic](./assets/screenshots/details/create_test.png) | ![AI test generation state](./assets/screenshots/details/create_test2.png) | ![Generated test result](./assets/screenshots/details/create_test3.png) |
+
+</div>
+
+#### Career guidance and feedback states
+
+<div align="center">
+
+| Career assessment | Career recommendations |
+|:---:|:---:|
+| ![Career assessment](./assets/screenshots/details/career_path1.png) | ![Career recommendations](./assets/screenshots/details/career_path2.png) |
+
+| Confirmation dialog | Result dialog |
+|:---:|:---:|
+| ![Confirmation dialog](./assets/screenshots/details/alertdialog1.png) | ![Result dialog](./assets/screenshots/details/alertdialog2.png) |
+
+</div>
+
 ## Quality and delivery
 
 - Flutter tests cover session bootstrap, analysis models, discovery screens,
