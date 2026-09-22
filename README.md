@@ -274,95 +274,77 @@ ProgTestAPI/                               ASP.NET Core 8 back-end
 
 ## Screenshots
 
-These are the current Turkish Play Store visuals for the v2 product experience.
+Every image below was captured directly from the current `2.0.0+9` build running
+on an Android emulator. The gallery follows the real product flows instead of
+using older mockups or archived UI screens.
 
 <div align="center">
 
-| Test your knowledge | Learn and explore |
+### Main experience
+
+| Home | Explore |
 |:---:|:---:|
-| ![Modern quiz interface](./assets/screenshots/01-test-your-knowledge.png) | ![Explore learning hub](./assets/screenshots/02-learn-and-explore.png) |
+| ![Current home screen](./assets/screenshots/current/01-home.png) | ![Current Explore hub](./assets/screenshots/current/02-discover.png) |
 
-| Choose an area | Select a test |
+| AI hub | Guest profile |
 |:---:|:---:|
-| ![Programming categories](./assets/screenshots/03-choose-an-area.png) | ![Level-based test list](./assets/screenshots/04-select-a-test.png) |
+| ![Current AI feature hub](./assets/screenshots/current/05-ai-hub.png) | ![Current guest profile and settings](./assets/screenshots/current/10-profile.png) |
 
-| AI learning hub | Generate a test |
+| Performance overview | Topic-gap analysis |
 |:---:|:---:|
-| ![Eight AI experiences](./assets/screenshots/05-ai-by-your-side.png) | ![Create a test with AI](./assets/screenshots/06-generate-a-test.png) |
+| ![Current analysis overview](./assets/screenshots/current/08-analysis.png) | ![Current topic-level analysis](./assets/screenshots/current/09-topic-analysis.png) |
 
-| Detailed result | Strength and gap analysis |
+### Explore and micro-learning
+
+| Flashcards | Revealed flashcard |
 |:---:|:---:|
-| ![Detailed test result](./assets/screenshots/07-detailed-result.png) | ![Topic performance analysis](./assets/screenshots/08-strength-gap-analysis.png) |
+| ![Current flashcard experience](./assets/screenshots/current/03-flashcards.png) | ![Current flashcard answer](./assets/screenshots/current/04-flashcard-answer.png) |
 
-</div>
-
-### Detailed feature gallery
-
-The Play Store compositions above show the current visual direction. The
-close-up captures below preserve detailed screens from the product's evolution
-and broader feature development. The active v2 feature set is documented above;
-experimental screens such as document-assisted AI may not be exposed in the
-current navigation.
-
-#### Account and navigation
-
-<div align="center">
-
-| Login | Register | Home |
-|:---:|:---:|:---:|
-| ![Login screen](./assets/screenshots/details/login.png) | ![Registration screen](./assets/screenshots/details/register.png) | ![Home screen](./assets/screenshots/details/home.png) |
-
-| Profile | Change password |
+| Predict the output | Programming dictionary |
 |:---:|:---:|
-| ![Profile and statistics](./assets/screenshots/details/profile.png) | ![Change password screen](./assets/screenshots/details/change_password.png) |
+| ![Current output-prediction challenge](./assets/screenshots/current/20-output-prediction.png) | ![Current programming dictionary](./assets/screenshots/current/22-programming-dictionary.png) |
 
-</div>
-
-#### Complete quiz journey
-
-<div align="center">
-
-| Test list | Unanswered question | Answered question |
-|:---:|:---:|:---:|
-| ![Available tests](./assets/screenshots/details/tests.png) | ![Question before answering](./assets/screenshots/details/question.png) | ![Question after answering](./assets/screenshots/details/answered_question.png) |
-
-| Unsolved test state | Test result |
+| Daily question | Explore roadmap |
 |:---:|:---:|
-| ![Unsolved test state](./assets/screenshots/details/unsolved_test.png) | ![Test result details](./assets/screenshots/details/results.png) |
+| ![Current daily question](./assets/screenshots/current/23-daily-question.png) | ![Current and upcoming Explore modules](./assets/screenshots/current/21-discover-roadmap.png) |
 
-</div>
+### Complete quiz journey
 
-#### AI assistant and document prototype
-
-<div align="center">
-
-| AI hub | Ask AI | Work with a document |
-|:---:|:---:|:---:|
-| ![AI feature hub](./assets/screenshots/details/ask_to_ai.png) | ![Ask AI screen](./assets/screenshots/details/ask_to_ai_page.png) | ![Document-assisted AI screen](./assets/screenshots/details/ask_with_doc.png) |
-
-</div>
-
-#### AI-generated test flow
-
-<div align="center">
-
-| Enter a topic | Generation progress | Generated test |
-|:---:|:---:|:---:|
-| ![Enter a test topic](./assets/screenshots/details/create_test.png) | ![AI test generation state](./assets/screenshots/details/create_test2.png) | ![Generated test result](./assets/screenshots/details/create_test3.png) |
-
-</div>
-
-#### Career guidance and feedback states
-
-<div align="center">
-
-| Career assessment | Career recommendations |
+| Available tests | Start confirmation |
 |:---:|:---:|
-| ![Career assessment](./assets/screenshots/details/career_path1.png) | ![Career recommendations](./assets/screenshots/details/career_path2.png) |
+| ![Current Flutter test list](./assets/screenshots/current/11-tests.png) | ![Current test-start dialog](./assets/screenshots/current/12-test-start-dialog.png) |
 
-| Confirmation dialog | Result dialog |
+| Question | Selected answer |
 |:---:|:---:|
-| ![Confirmation dialog](./assets/screenshots/details/alertdialog1.png) | ![Result dialog](./assets/screenshots/details/alertdialog2.png) |
+| ![Current question screen](./assets/screenshots/current/13-question.png) | ![Current selected-answer state](./assets/screenshots/current/14-question-selected.png) |
+
+| Final question | Detailed result |
+|:---:|:---:|
+| ![Current final question](./assets/screenshots/current/15-last-question.png) | ![Current detailed result](./assets/screenshots/current/16-result.png) |
+
+| Question-by-question review |
+|:---:|
+| ![Current answer review and explanation](./assets/screenshots/current/17-answer-review.png) |
+
+### AI learning tools
+
+| Ask AI | Create a test with AI |
+|:---:|:---:|
+| ![Current Ask AI screen](./assets/screenshots/current/06-ask-ai.png) | ![Current AI test creator](./assets/screenshots/current/07-create-ai-test.png) |
+
+| Career assessment | Project roadmap |
+|:---:|:---:|
+| ![Current AI career assessment](./assets/screenshots/current/24-career-assessment.png) | ![Current AI project roadmap](./assets/screenshots/current/25-project-roadmap.png) |
+
+| AI feature catalog | Knowledge assessment |
+|:---:|:---:|
+| ![Current complete AI feature catalog](./assets/screenshots/current/26-ai-more.png) | ![Current AI knowledge assessment](./assets/screenshots/current/27-knowledge-assessment.png) |
+
+### Account flow
+
+| Login | Registration |
+|:---:|:---:|
+| ![Current login screen](./assets/screenshots/current/19-login.png) | ![Current registration screen](./assets/screenshots/current/18-register.png) |
 
 </div>
 
