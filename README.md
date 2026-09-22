@@ -1,286 +1,321 @@
 <div align="center">
 
+<img src="./assets/progtest-feature-graphic-tr.png" alt="ProgTest — Learn, test yourself and improve" width="100%" />
+
 # ProgTest
 
-### AI-Powered Quiz & Learning App for Software Developers
+### AI-powered quiz and learning platform for software developers
 
-A full-stack mobile application — **Flutter** front-end + a **custom ASP.NET Core Web API** back-end — that helps programming students and enthusiasts test their knowledge, track their progress, and learn with the help of generative AI.
+ProgTest is a production Android application that combines programming quizzes,
+short-form discovery content, detailed performance analysis and generative AI in
+one learning experience.
 
-[![Live on Google Play](https://img.shields.io/badge/Google%20Play-Download-2ea44f?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.yusufUguz.progtest)
-&nbsp;
-![Flutter](https://img.shields.io/badge/Flutter-3.35-02569B?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.9-0175C2?logo=dart&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet&logoColor=white)
-![SQL Server](https://img.shields.io/badge/SQL%20Server-MSSQL-CC2927?logo=microsoftsqlserver&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-1.5%20Flash-8E75B2?logo=google&logoColor=white)
+[![Google Play](https://img.shields.io/badge/Google_Play-Download-2ea44f?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.yusufUguz.progtest)
+![Release](https://img.shields.io/badge/release-v2.0.0-6D5BD0)
+![Flutter](https://img.shields.io/badge/Flutter-Dart-02569B?logo=flutter&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8.0-512BD4?logo=dotnet&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL_Server-EF_Core-CC2927?logo=microsoftsqlserver&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-3.1_Flash_Lite-8E75B2?logo=googlegemini&logoColor=white)
+
+[Download on Google Play](https://play.google.com/store/apps/details?id=com.yusufUguz.progtest)
+&nbsp;•&nbsp;
+[Developer portfolio](https://yusufuguz.com)
 
 </div>
 
-> **Designed, developed, deployed and published by [Yusuf Uğuz](https://github.com/YusufUguz)** — both the Flutter mobile client **and** the back-end Web API are written from scratch, and the app is **live on Google Play**.
+> Designed, developed, deployed and published end-to-end by
+> [Yusuf Uğuz](https://github.com/YusufUguz): Flutter mobile client,
+> ASP.NET Core Web API, SQL Server data layer, AI integration and the Google
+> Play release.
 
 ---
 
-## 📑 Table of Contents
+## Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [AI Capabilities](#-ai-capabilities)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Project Structure](#-project-structure)
-- [How the App & API Work Together](#-how-the-app--api-work-together)
-- [Efficient Use of Flutter's Widget Tree](#-efficient-use-of-flutters-widget-tree)
-- [Backend — ASP.NET Core Web API](#-backend--aspnet-core-web-api)
-- [Screenshots](#-screenshots)
-- [Publishing to Google Play](#-publishing-to-google-play)
-- [Getting Started](#-getting-started)
-- [What This Project Demonstrates](#-what-this-project-demonstrates)
-- [Author](#-author)
+- [Product overview](#product-overview)
+- [What's new in v2](#whats-new-in-v2)
+- [Core experiences](#core-experiences)
+- [AI capabilities](#ai-capabilities)
+- [Architecture](#architecture)
+- [Current project structure](#current-project-structure)
+- [Engineering highlights](#engineering-highlights)
+- [Technology stack](#technology-stack)
+- [Screenshots](#screenshots)
+- [Quality and delivery](#quality-and-delivery)
+- [Author](#author)
 
 ---
 
-## 🎯 Overview
+## Product overview
 
-**ProgTest** is an end-to-end product, not just a UI demo. The target audience is high-school and university students (and anyone) studying or interested in software and programming. Users review what they have learned by solving quizzes, see detailed statistics about their performance, and get help from a generative-AI assistant in several different modes.
+ProgTest helps students and developers strengthen their programming knowledge
+through guided tests and short, repeatable learning activities. A user can start
+immediately without creating an account, choose a software category, solve a
+level-appropriate test, review every answer and inspect strengths and knowledge
+gaps over time.
 
-The application is fully **authentication-based**: users register and sign in against a custom **ASP.NET Core Identity** back-end. Guests can browse with limited access. All quiz content, results and statistics are persisted in a **Microsoft SQL Server** database through a self-built **RESTful Web API** ([progtest.yusufuguz.com](https://progtest.yusufuguz.com/swagger/index.html)).
+The mobile app communicates with a custom ASP.NET Core API. The API owns
+authentication, guest sessions, quiz content, results, analysis data, AI quotas
+and Gemini access. Data is persisted in SQL Server through Entity Framework Core.
+No AI credential is shipped inside the Flutter application.
 
----
+The application interface and current Play Store listing are in Turkish.
 
-## ✨ Features
+## What's new in v2
 
-- 🔐 **Authentication & Authorization** — Register / login flow backed by ASP.NET Core Identity; JWT-based session handling; optional guest mode with restricted access.
-- 🗂️ **Categories → Tests → Questions** — Browse programming categories, pick a test, and answer questions one by one in a dedicated quiz flow.
-- 📊 **Result & Statistics Screen** — After each test the user sees a results screen (correct/incorrect counts, time spent, score) which is persisted per-user in the database.
-- 👤 **Profile & Aggregate Stats** — View name & e-mail, change password, sign out, and see lifetime statistics (total tests solved, total correct/incorrect, average score).
-- 🤖 **AI Assistant** — Eight different Gemini-powered AI experiences (see below).
-- 💬 **User Feedback** — Users can submit feedback that is stored through the API.
-- 🌐 **Custom Back-end** — Every endpoint is served by a personally developed and deployed Web API, not a BaaS.
+- **Explore hub** — flashcards, output-prediction exercises, a programming
+  dictionary and a daily question add short learning sessions outside quizzes.
+- **Account-free experience** — an installation-scoped guest session receives a
+  renewable JWT, allowing users to solve tests, use AI and retain statistics
+  without first registering.
+- **Modern quiz flow** — refreshed question cards, progress tracking, previous /
+  next navigation and a clearer answer-selection experience.
+- **Deeper analysis** — overall score metrics, answer distribution, category
+  performance and topic-level gap analysis expose strong and weak areas.
+- **Better result review** — every completed test includes question-by-question
+  review and technical explanations.
+- **Safer AI architecture** — Gemini calls moved behind the API with server-side
+  validation, daily per-user quotas, IP rate limits and structured response
+  handling.
+- **Production observability** — release errors are reported through Firebase
+  Crashlytics while the API uses structured Serilog request and application logs.
 
----
+## Core experiences
 
-## 🤖 AI Capabilities
+| Area | What it provides |
+|---|---|
+| **Tests** | Programming categories, level-based tests, guided question flow and persisted results. |
+| **Explore** | Flashcards, code-output challenges, programming terms and a daily question. |
+| **AI** | Eight focused learning and career tools backed by Gemini through the ProgTest API. |
+| **Analysis** | Score overview, correct / incorrect / blank distribution, category comparison and topic gaps. |
+| **Profile** | Lifetime statistics, feedback, password management, account deletion and sign out. |
+| **Guest mode** | Immediate use without e-mail or password, backed by a renewable anonymous server session. |
 
-Powered by Google's **Gemini 1.5 Flash** model via the `google_generative_ai` package, the AI page offers eight distinct experiences:
+### Quiz and result flow
 
-| # | Feature | Description |
-|---|---------|-------------|
-| 1 | **Ask the AI** | Simplest mode — single prompt in, single answer out. |
-| 2 | **Chat with AI** | A continuous, stateful chat session instead of one-shot queries. |
-| 3 | **Ask with an Image** | Multimodal — attach an image + a prompt and ask about it. |
-| 4 | **Work on a Document** | Pick a document, send it with a prompt, and reason over its contents. |
-| 5 | **Generate a Test with AI** | A fixed engineered prompt turns a single topic into 10 structured questions, which are parsed and saved to the database as a user-private test. |
-| 6 | **Plan Project Progress** | Given a platform + project idea, returns a structured roadmap. |
-| 7 | **Determine Your Work Field** | 15 questions feed an engineered prompt that recommends 3 career paths. |
-| 8 | **What You Need to Know** | Given a field (e.g. "mobile dev with Flutter"), returns the key topics to master. |
+1. Select a programming category such as C#, Flutter, OOP, front-end,
+   back-end or database management.
+2. Choose a test aligned with the desired topic and level.
+3. Move between questions while the interface tracks progress and selected
+   answers.
+4. Finish the test to see score, duration, correct, incorrect and blank totals.
+5. Review individual answers with concise technical explanations.
+6. Use the Analysis tab to inspect long-term category and topic performance.
 
-> The "Generate a Test with AI" flow is a highlight: the AI's free-form response is **parsed into structured data** and persisted through the API, so a generated quiz becomes a first-class, solvable test owned by that user.
+### Explore hub
 
----
+Four learning modes are currently available:
 
-## 🛠️ Tech Stack
+- **Flashcards** for fast recall and spaced repetition-style review.
+- **Predict the Output** for reading short snippets before mentally executing
+  the code.
+- **Programming Dictionary** for concise explanations of technical terms.
+- **Daily Question** for a small, rotating daily challenge.
 
-**Mobile (Flutter)**
-- Flutter & Dart
-- **MVVM** architecture, **feature-first** folder structure
-- **BLoC / Cubit** (`flutter_bloc`) for screen state; `ValueNotifier` for lightweight local state
-- `http` for REST calls with timeouts & status-code handling
-- `flutter_secure_storage` for secure token/user caching
-- `jwt_decoder` for JWT expiry handling
-- `google_generative_ai` (Gemini)
-- `image_picker`, `file_picker`, `mime` for multimodal AI input
-- `quickalert`, `toastification`, `google_nav_bar`, `cached_network_image`, `flutter_markdown`, `in_app_review`
+The content endpoints support deterministic decks, category or language filters
+and server-side validation. Interview preparation, community discussions,
+complete-the-code and bug-hunt experiences are represented in the product
+roadmap and clearly marked as upcoming in the app.
 
-**Back-end (Web API)**
-- **ASP.NET Core 8** Web API (REST)
-- **ASP.NET Core Identity** for users & roles
-- **JWT Bearer** authentication
-- **Entity Framework Core** (Code-First + Migrations)
-- **Microsoft SQL Server**
-- **Swagger / OpenAPI** documentation
-- CORS configured for the mobile client
+## AI capabilities
 
----
+The AI hub exposes eight active, purpose-built experiences. Each mode sends a
+constrained feature identifier and validated input to the back-end instead of
+calling Gemini directly from the device.
 
-## 🏛️ Architecture
+| # | Experience | Purpose |
+|---:|---|---|
+| 1 | **Ask AI** | Get a focused answer to a programming question. |
+| 2 | **Chat with AI** | Continue a contextual, multi-turn learning conversation. |
+| 3 | **Create a Test with AI** | Generate a structured ten-question test and save it as a solvable private test. |
+| 4 | **Career Field Recommendation** | Turn guided answers into suitable software-career suggestions. |
+| 5 | **Project Roadmap** | Break a platform and project idea into an actionable development plan. |
+| 6 | **Learning Guide** | Identify the concepts and sequence needed to learn a chosen field. |
+| 7 | **Technical Interview Simulation** | Practice realistic technical interview questions and feedback. |
+| 8 | **Knowledge-Level Assessment** | Generate a level-aware assessment and evaluate current understanding. |
 
-The app follows the **MVVM pattern** with a **feature-first** organization. Every feature is a self-contained module split into a **View** layer and a **ViewModel** layer, with cross-cutting code living in a shared **core** layer.
+AI-generated tests are created transactionally on the server: the model response
+is validated and converted to domain entities before the test and its questions
+are committed. A failed generation does not leave a partial test in the database.
 
+## Architecture
+
+```text
+┌─────────────────────────────────────────────────────────────────────┐
+│ Flutter mobile client                                               │
+│                                                                     │
+│  Views + widgets  ⇄  Cubit/ViewModel  ⇄  services + typed models    │
+│         │                                  │                        │
+│         └─ secure storage / outbox / session handling ──────────────┤
+└───────────────────────────────────┬─────────────────────────────────┘
+                                    │ HTTPS + JSON + Bearer JWT
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│ ASP.NET Core 8 Web API                                              │
+│                                                                     │
+│ Controllers → validation → application services → EF Core           │
+│      │              │                    │                          │
+│      │              ├─ user + IP limits  ├─ Gemini API              │
+│      │              └─ auth / guest JWT  └─ structured AI parsing   │
+└───────────────────────────────────┬─────────────────────────────────┘
+                                    │
+                                    ▼
+                         Microsoft SQL Server
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                          FEATURE                               │
-│                                                                │
-│   view/                         view_model/                    │
-│   ├─ <feature>_view.dart   ◄──► ├─ <feature>_view_model.dart   │
-│   │   (UI / widget tree)        │   (Cubit: business logic)    │
-│   ├─ widgets/                   ├─ <feature>_state.dart        │
-│   │   (small, reusable pieces)  │   (immutable UI states)      │
-│   └─ ...                        └─ <feature>_view_mixin.dart   │
-│                                     (init / controllers glue)  │
-└───────────────────────────────┬────────────────────────────────┘
-                                 │  uses
-                                 ▼
-┌──────────────────────────────────────────────────────────────┐
-│                            CORE                                │
-│  constants/ (design system) · models/ · general_widgets/      │
-│  JWT_token_operations/ · secure_storage/                       │
-└───────────────────────────────┬────────────────────────────────┘
-                                 │  HTTP / JSON
-                                 ▼
-┌──────────────────────────────────────────────────────────────┐
-│              ASP.NET Core Web API  +  SQL Server               │
-└──────────────────────────────────────────────────────────────┘
-```
 
-**Key architectural decisions**
+The Flutter codebase uses a **feature-first MVVM-style organization**. Screens
+are composed from small widgets; Cubit-based ViewModels emit explicit loading,
+loaded and error states; shared networking, session, design-system and storage
+concerns live in `core/`.
 
-- **Cubit-driven state** — each ViewModel is a `Cubit` that emits explicit, immutable states (`Initial → Loading → Loaded → Error`). The View renders purely as a function of state via `BlocBuilder`, keeping UI declarative and predictable.
-- **View Mixins** — initialization logic, controllers, and `BuildContext` glue are extracted into a `*_view_mixin.dart`, so the `build()` method stays focused on layout only.
-- **Centralized design system** — colors, text styles, decorations, button styles, asset paths and API routes live as constants in `core/constants/`, giving the app a single source of truth and consistent theming.
-- **Shared widgets** — recurring UI (loaders, error states, toasts, refresh buttons, page transitions) lives in `core/general_widgets/` and is reused across every feature.
-- **Resilient networking** — every request is wrapped with timeouts and granular status-code / `SocketException` handling, surfacing user-friendly error states instead of crashes.
+## Current project structure
 
----
-
-## 📁 Project Structure
-
-```
-progtest/                         # Flutter mobile client
+```text
+progtest/                                  Flutter mobile application
 ├─ lib/
-│  ├─ main.dart                    # App entry point
-│  ├─ core/                        # Cross-cutting, feature-agnostic code
-│  │  ├─ constants/                # Design system + API routes + prompts
-│  │  ├─ models/                   # JSON-serializable data models
-│  │  ├─ general_widgets/          # Reusable UI (loaders, errors, toasts…)
-│  │  ├─ JWT_token_operations/     # Token expiry / decoding helpers
-│  │  └─ secure_storage/           # Secure local persistence
-│  └─ features/                    # One folder per feature (MVVM)
-│     ├─ splash/  login/  register/  home/  tests/  questions/
-│     ├─ results/  profile/  change_password/  bottom_nav_bar/
-│     └─ AI_page/                  # Nested sub-features for each AI mode
-│        └─ features/
-│           ├─ ask_to_ai/  chat_with_ai/  ask_to_ai_with_image/
-│           ├─ ask_to_ai_with_doc/  create_test_with_ai/
-│           ├─ determine_workfield_with_ai/  project_progress_with_ai/
-│           └─ need_to_know/
-└─ android/ ios/ web/ ...          # Platform projects
+│  ├─ main.dart                            Startup and app composition
+│  ├─ core/
+│  │  ├─ constants/                        API routes, assets and design tokens
+│  │  ├─ models/                           Typed API/domain models
+│  │  ├─ network/                          Unauthorized/session handling
+│  │  ├─ secure_storage/                   JWT, user and guest persistence
+│  │  ├─ services/
+│  │  │  ├─ ai/                            Back-end AI client + typed failures
+│  │  │  ├─ guest_session_service.dart     Anonymous bootstrap and refresh
+│  │  │  ├─ statistics_outbox_service.dart Offline result queue
+│  │  │  └─ crash_reporting_service.dart   Firebase Crashlytics bridge
+│  │  └─ general_widgets/                  Shared loading/error/feedback UI
+│  └─ features/
+│     ├─ splash/ login/ register/ home/
+│     ├─ tests/ questions/ results/
+│     ├─ discover/                         Four active micro-learning modes
+│     ├─ AI_page/                          Eight active AI experiences
+│     ├─ analysis/                         Category and topic performance
+│     ├─ profile/ change_password/ delete_account/
+│     └─ bottom_nav_bar/
+├─ assets/                                 Images, icons, fonts and local data
+├─ test/                                   Unit, model and widget tests
+├─ android/ ios/ web/ linux/ macos/         Flutter platform projects
+└─ store_assets/                           Play Store images and promo video
 
-ProgTestAPI/                       # ASP.NET Core 8 Web API (back-end)
-├─ Controllers/                    # Categories, Tests, Questions, Users,
-│                                  #   UserStatistics, UserFeedbacks
-├─ Models/                         # EF Core entities + DbContext + Identity
-├─ DTO/                            # Login / response data-transfer objects
-├─ Migrations/                     # EF Core Code-First migrations
-└─ Program.cs                      # DI, Identity, JWT, CORS, Swagger setup
+ProgTestAPI/                               ASP.NET Core 8 back-end
+├─ Controllers/
+│  ├─ SessionsController.cs                Guest create/refresh
+│  ├─ DiscoverController.cs                Explore content
+│  ├─ AiController.cs                      Protected AI gateway
+│  ├─ Categories/Tests/Questions           Quiz domain endpoints
+│  └─ Users/UserStatistics/UserFeedbacks   Account and analytics endpoints
+├─ Services/                               Gemini, quota, discovery, auth,
+│                                          explanations and test generation
+├─ Models/                                 Identity + EF Core entities/context
+├─ DTO/                                    Explicit request/response contracts
+├─ Data/                                   Seed and official explanation data
+├─ Migrations/                             EF Core schema history
+├─ Tests/                                  API service/controller tests
+├─ Tools/                                  Content-generation utilities
+└─ Program.cs                              DI, auth, rate limiting and pipeline
 ```
 
----
+## Engineering highlights
 
-## 🔗 How the App & API Work Together
+### Session and data resilience
 
-```
- Flutter UI            ViewModel (Cubit)          Web API (ASP.NET Core)        SQL Server
-─────────────         ──────────────────         ───────────────────────       ───────────
-   tap  ───────────►  emit(Loading)
-                      http.get/post  ───────────►  [ApiController] endpoint
-                                                    EF Core query  ───────────►  query/save
-                                                    JSON response  ◄───────────
-                      model.fromJson() ◄──────────
-   rebuild  ◄───────  emit(Loaded / Error)
-```
+- Registered users authenticate with ASP.NET Core Identity and JWT Bearer
+  tokens.
+- Guest identities are generated once per installation; only a SHA-256 hash of
+  the installation secret is stored by the API, and refresh comparison is
+  constant-time.
+- Concurrent guest bootstrap calls share one request, preventing duplicate
+  anonymous accounts.
+- Results produced during a network interruption enter a bounded secure-storage
+  outbox and are flushed to the correct user when connectivity returns.
+- Expired or malformed sessions are recovered without trapping the user on the
+  splash screen.
 
-- **Endpoints** are centralized in `core/constants/api_constants.dart`, so the base URL and every route are configurable from one place (e.g. `10.0.2.2:5134` for the emulator vs. the production domain).
-- **Auth** — on login the API returns a JWT + user info; the token is stored via `flutter_secure_storage`, decoded with `jwt_decoder` to check expiry, and used for protected requests.
-- **Models** — each `core/models/*.dart` mirrors an API entity with `fromJson` / `toJson`, keeping (de)serialization in one predictable place.
+### AI safety and reliability
 
----
+- Gemini credentials stay on the server and are never included in the APK.
+- Inputs have length, format, feature and file-size validation.
+- Daily per-user usage limits are combined with IP-based fixed-window rate
+  limiting.
+- Chat history is bounded, AI errors map to typed client states and unsuccessful
+  requests can release their reserved quota.
+- AI test and knowledge-assessment responses use schema-aware parsing and domain
+  validation before reaching the database or UI.
+- Official question explanations are served from persisted content; missing
+  explanations can be generated, validated for technical depth and stored for
+  reuse.
 
-## 🧩 Efficient Use of Flutter's Widget Tree
+### UI and state management
 
-A deliberate goal of this project was a **clean, composable widget tree** rather than monolithic `build()` methods:
+- Feature-local Cubits isolate business logic and make loading, success and
+  failure branches predictable.
+- Small widgets under each feature keep rebuild boundaries focused and maximize
+  reusable, constant UI.
+- Centralized colors, typography, decorations, buttons and asset paths maintain
+  a consistent visual language.
+- Reusable empty, error, configuration and loading states provide consistent
+  recovery paths across the application.
 
-- **Widget decomposition** — every screen is broken into small, single-responsibility widgets under its own `view/widgets/` folder (e.g. `category_card`, `option_card`, `score_card`, individual text fields). This maximizes `const` usage, improves readability, and lets Flutter rebuild only what changed.
-- **State-driven rebuilds** — `BlocBuilder` wraps only the subtree that depends on state, while `ValueListenableBuilder` is used for lightweight reactive pieces (e.g. the drawer's user info), avoiding unnecessary full-screen rebuilds.
-- **Reusable cross-feature widgets** — loaders, error views, toasts and animated page transitions are defined once in `core/general_widgets/` and composed everywhere.
-- **Declarative theming** — centralized `TextStyle`, `BoxDecoration`, `ButtonStyle` and color constants keep widgets short and consistent.
+## Technology stack
 
-> Example: `HomeView` renders three clear branches off a single Cubit state — `CircularProgressLoader` (loading), `ErrorStateView` with retry (error), and a `GridView` of `CategoryCard`s (loaded) — a compact, fully declarative widget tree.
+| Layer | Technologies |
+|---|---|
+| **Mobile** | Flutter, Dart, `flutter_bloc`, `equatable`, `http` |
+| **Local security** | `flutter_secure_storage`, JWT expiry handling |
+| **UX** | Material, Google Nav Bar, Flutter Markdown, Toastification, cached images |
+| **Observability** | Firebase Core, Firebase Crashlytics |
+| **API** | ASP.NET Core 8, REST, Swagger / OpenAPI, Serilog |
+| **Identity & security** | ASP.NET Core Identity, JWT Bearer, HTTPS, rate limiting |
+| **Persistence** | Entity Framework Core Code First, SQL Server, migrations |
+| **AI** | Google Gemini 3.1 Flash Lite through a server-side HTTP client |
+| **Testing** | Flutter unit/widget tests and xUnit API tests |
+| **Distribution** | Signed Android App Bundle, Google Play Console |
 
----
+## Screenshots
 
-## 🌐 Backend — ASP.NET Core Web API
-
-The back-end is a personally built **RESTful API**, deployed and serving the live app at **[progtest.yusufuguz.com](https://progtest.yusufuguz.com/swagger/index.html)**.
-
-- **Controllers** — `Categories`, `Tests`, `Questions`, `Users`, `UserStatistics`, `UserFeedbacks`.
-- **Identity & Auth** — ASP.NET Core Identity manages users/roles; login issues a **JWT** (`GenerateJWT`) returned to the client; password policy & lockout configured in `Program.cs`.
-- **Data layer** — EF Core **Code-First** with migrations against **SQL Server**; `ProgTestContext` extends `IdentityDbContext`.
-- **Docs** — Swagger UI with a Bearer security scheme for trying authenticated endpoints.
-- **CORS** — open policy so the mobile client can consume the API.
-
----
-
-## 📱 Screenshots
+These are the current Turkish Play Store visuals for the v2 product experience.
 
 <div align="center">
 
-| Login | Register | Home |
-|:---:|:---:|:---:|
-| ![Login](./login.png) | ![Register](./register.png) | ![Home](./home.png) |
+| Test your knowledge | Learn and explore |
+|:---:|:---:|
+| ![Modern quiz interface](./assets/screenshots/01-test-your-knowledge.png) | ![Explore learning hub](./assets/screenshots/02-learn-and-explore.png) |
 
-| Tests | Question | Answered |
-|:---:|:---:|:---:|
-| ![Tests](./tests.png) | ![Question](./question.png) | ![Answered](./answered_question.png) |
+| Choose an area | Select a test |
+|:---:|:---:|
+| ![Programming categories](./assets/screenshots/03-choose-an-area.png) | ![Level-based test list](./assets/screenshots/04-select-a-test.png) |
 
-| Results | Profile | Change Password |
-|:---:|:---:|:---:|
-| ![Results](./results.png) | ![Profile](./profile.png) | ![Change Password](./change_password.png) |
+| AI learning hub | Generate a test |
+|:---:|:---:|
+| ![Eight AI experiences](./assets/screenshots/05-ai-by-your-side.png) | ![Create a test with AI](./assets/screenshots/06-generate-a-test.png) |
 
-| Ask the AI | Ask with Document | Generate Test with AI |
-|:---:|:---:|:---:|
-| ![Ask AI](./ask_to_ai.png) | ![Ask with Doc](./ask_with_doc.png) | ![Create Test](./create_test.png) |
-
-| Determine Work Field | Career Path | Alert Dialogs |
-|:---:|:---:|:---:|
-| ![Career 1](./career_path1.png) | ![Career 2](./career_path2.png) | ![Alert](./alertdialog1.png) |
+| Detailed result | Strength and gap analysis |
+|:---:|:---:|
+| ![Detailed test result](./assets/screenshots/07-detailed-result.png) | ![Topic performance analysis](./assets/screenshots/08-strength-gap-analysis.png) |
 
 </div>
 
----
+## Quality and delivery
 
-## 🚀 Publishing to Google Play
+- Flutter tests cover session bootstrap, analysis models, discovery screens,
+  AI flows, quiz interaction, result review, splash recovery and guest profiles.
+- API tests cover guest identity behavior, AI quotas and builders, discovery
+  content, official explanations and statistics endpoints.
+- The production build enables Crashlytics collection while keeping development
+  feedback local.
+- The Android release uses a signed App Bundle and versioning sourced from
+  `pubspec.yaml`; the current project version is `2.0.0+9`.
+- Store screenshots, feature graphic and promotional video are maintained next
+  to the mobile project so product visuals can evolve with the UI.
 
-The app is **live on the Google Play Store**. The release pipeline:
+> This repository is the public product showcase. The production mobile and API
+> codebases are maintained separately.
 
-1. **App signing** — generated an upload keystore (`keytool`) and wired it through `android/key.properties` + the `signingConfigs.release` block in `android/app/build.gradle` (credentials kept out of source control).
-2. **Versioning** — managed via `pubspec.yaml` (`version: 1.0.0+5`), which maps to Android's `versionName` / `versionCode`.
-3. **App identity** — application ID `com.yusufUguz.progtest`, custom launcher icon and a native splash screen.
-4. **Release artifact** — built a signed **Android App Bundle**:
-   ```bash
-   flutter build appbundle --release
-   ```
-5. **Store listing & rollout** — created the listing (title, description, screenshots, feature graphic), completed the content-rating & data-safety forms, and rolled out to production via the Google Play Console.
+## Author
 
-> 📲 **[Download ProgTest on Google Play](https://play.google.com/store/apps/details?id=com.yusufUguz.progtest)**
+**Yusuf Uğuz** — Full-stack web and mobile developer
 
----
-
-## 💡 What This Project Demonstrates
-
-Building ProgTest end-to-end strengthened a broad, full-stack skill set:
-
-- **Full-stack ownership** — designing the data model, building and deploying a REST API, and consuming it from a mobile client.
-- **Clean architecture** — applying MVVM + feature-first structure and a clear core/feature separation that scales as features grow.
-- **Production state management** — modeling UI as explicit Cubit states for predictable, testable behavior.
-- **API design & security** — Identity, JWT auth, DTOs, EF Core Code-First migrations, Swagger docs.
-- **Integrating generative AI** — multimodal prompts, chat sessions, and parsing AI output into structured, persisted data.
-- **Shipping a real product** — code signing, versioning, store assets, compliance forms, and a production release on Google Play.
-
----
-
-## 👤 Author
-
-**Yusuf Uğuz**
 [![GitHub](https://img.shields.io/badge/GitHub-YusufUguz-181717?logo=github)](https://github.com/YusufUguz)
-
-> This project — the Flutter client, the ASP.NET Core Web API, and the Google Play release — was designed and developed entirely by Yusuf Uğuz.
+[![Portfolio](https://img.shields.io/badge/Portfolio-yusufuguz.com-6D5BD0)](https://yusufuguz.com)
+[![Google Play](https://img.shields.io/badge/Google_Play-ProgTest-2ea44f?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.yusufUguz.progtest)
