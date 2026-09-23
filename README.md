@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="./assets/progtest-feature-graphic-tr.png" alt="ProgTest — Learn, test yourself and improve" width="100%" />
-
 # ProgTest
 
-### AI-powered quiz and learning platform for software developers
+### AI-powered quiz and learning platform for software developers and programming learners
 
 ProgTest is a production Android application that combines programming quizzes,
 short-form discovery content, detailed performance analysis and generative AI in
@@ -33,7 +31,6 @@ one learning experience.
 ## Contents
 
 - [Product overview](#product-overview)
-- [What's new in v2](#whats-new-in-v2)
 - [Core experiences](#core-experiences)
 - [AI capabilities](#ai-capabilities)
 - [Architecture](#architecture)
@@ -41,7 +38,6 @@ one learning experience.
 - [Engineering highlights](#engineering-highlights)
 - [Technology stack](#technology-stack)
 - [Screenshots](#screenshots)
-- [Quality and delivery](#quality-and-delivery)
 - [Author](#author)
 
 ---
@@ -60,25 +56,6 @@ and Gemini access. Data is persisted in SQL Server through Entity Framework Core
 No AI credential is shipped inside the Flutter application.
 
 The application interface and current Play Store listing are in Turkish.
-
-## What's new in v2
-
-- **Explore hub** — flashcards, output-prediction exercises, a programming
-  dictionary and a daily question add short learning sessions outside quizzes.
-- **Account-free experience** — an installation-scoped guest session receives a
-  renewable JWT, allowing users to solve tests, use AI and retain statistics
-  without first registering.
-- **Modern quiz flow** — refreshed question cards, progress tracking, previous /
-  next navigation and a clearer answer-selection experience.
-- **Deeper analysis** — overall score metrics, answer distribution, category
-  performance and topic-level gap analysis expose strong and weak areas.
-- **Better result review** — every completed test includes question-by-question
-  review and technical explanations.
-- **Safer AI architecture** — Gemini calls moved behind the API with server-side
-  validation, daily per-user quotas, IP rate limits and structured response
-  handling.
-- **Production observability** — release errors are reported through Firebase
-  Crashlytics while the API uses structured Serilog request and application logs.
 
 ## Core experiences
 
@@ -347,19 +324,6 @@ using older mockups or archived UI screens.
 | ![Current login screen](./assets/screenshots/current/19-login.png) | ![Current registration screen](./assets/screenshots/current/18-register.png) |
 
 </div>
-
-## Quality and delivery
-
-- Flutter tests cover session bootstrap, analysis models, discovery screens,
-  AI flows, quiz interaction, result review, splash recovery and guest profiles.
-- API tests cover guest identity behavior, AI quotas and builders, discovery
-  content, official explanations and statistics endpoints.
-- The production build enables Crashlytics collection while keeping development
-  feedback local.
-- The Android release uses a signed App Bundle and versioning sourced from
-  `pubspec.yaml`; the current project version is `2.0.0+9`.
-- Store screenshots, feature graphic and promotional video are maintained next
-  to the mobile project so product visuals can evolve with the UI.
 
 > This repository is the public product showcase. The production mobile and API
 > codebases are maintained separately.
